@@ -26,9 +26,7 @@ module Api
       end
 
       def create
-        # byebug
         cocktail_params
-        # @cocktail = Cocktail.create(cocktail_params)
         @cocktail = Cocktail.create!(name: params[:cocktail][:name], description: params[:cocktail][:name], instructions: params[:cocktail][:instructions], source: params[:cocktail][:source])
         params[:proportions].map do |prop| 
           @ingredient = Ingredient.create!(name: prop[:ingredient_name])

@@ -12,12 +12,10 @@ module Api
             id: ingredient.id,
             name: ingredient.name,
           }
-  
           render json: ingredient_json
         end
   
         def create
-          byebug
           @ingredient = Ingredient.create(ingredient_params)
          
         end
